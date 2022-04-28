@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,17 +7,17 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Iniciar sesión - Legaltech</title>
+	<title> Registrarse - Legaltech</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
 
 	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap-theme.css' %}" media="screen" >
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -78,28 +79,25 @@
 							<p class="text-center text-muted">Si ya posee una cuenta, solo debe <a href="signin.html">Iniciar sesión</a> De lo contrario, debe registrarse. </p>
 							<hr>
 
-							<form>
+							<form method="post">
+								{% csrf_token %}
 								<div class="top-margin">
-									<label>Nombres</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="top-margin">
-									<label>Apellidos</label>
-									<input type="text" class="form-control">
+									<label>Usernames <span class="text-danger">*</span></label>
+									{{form.username}}								</div>
 								</div>
 								<div class="top-margin">
 									<label>Email  <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									{{form.email}}
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Contraseña <span class="text-danger">*</span></label>
-										<input type="text" class="form-control">
+										{{form.password1}}
 									</div>
 									<div class="col-sm-6">
 										<label>Confirmar contraseña <span class="text-danger">*</span></label>
-										<input type="text" class="form-control">
+										{{form.password2}}
 									</div>
 								</div>
 

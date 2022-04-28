@@ -1,0 +1,39 @@
+{% extends 'applegal/base.html' %}
+
+{% block content %}
+<!-- Header -->
+<header id="head">
+    <div class="container">
+        <div class="row">
+            <h1 class="lead">LEGALTECH, BUFETE DE ABOGADOS</h1>
+            
+            
+        </div>
+    </div>
+</header>
+<!-- /Header -->
+
+<div class='container'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID Caso</th>
+          <th scope="col">Accion</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      {% for c in casos %}
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{c.id_demanda}}</td>
+          <td><a href="{% url 'eliminar' c.id%}" class="btn btn-danger">Eliminar</a></td>
+        </tr>
+      </tbody>
+      {% endfor %}
+      
+    </table>
+  </div>
+
+{% endblock content %}

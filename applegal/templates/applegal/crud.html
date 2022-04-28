@@ -1,0 +1,43 @@
+
+
+{% extends 'applegal/base.html' %}
+
+{% block content %}
+<!-- Header -->
+<header id="head">
+    <div class="container">
+        <div class="row">
+            <h1 class="lead">LEGALTECH, BUFETE DE ABOGADOS</h1>
+            
+            
+        </div>
+    </div>
+</header>
+<!-- /Header -->
+<div class="container">
+
+	<h2>Modificar Demanda</h2>
+	
+	<table class="table table-dark">
+		<thead>
+		  <tr>
+			<th scope="col">#</th>
+			<th scope="col">First</th>
+			<th scope="col">Last</th>
+			<th scope="col">Accion</th>
+		  </tr>
+		</thead>
+		<tbody>
+			{% for d in demanda %}
+		  <tr>
+			<th scope="row">{{d.id}}</th>
+			<td>{{d.id_demanda}}</td>
+			<td>{{d.fecha}}</td>
+			<td>
+		  </tr>
+		  {% endfor %}
+		</tbody>
+	  </table>
+	
+</div>
+{% endblock %}

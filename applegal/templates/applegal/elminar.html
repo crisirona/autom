@@ -1,0 +1,28 @@
+{% extends 'applegal/base.html' %}
+
+{% block content %}
+<!-- Header -->
+<header id="head">
+    <div class="container">
+        <div class="row">
+            <h1 class="lead">LEGALTECH, BUFETE DE ABOGADOS</h1>
+            
+            
+        </div>
+    </div>
+</header>
+<!-- /Header -->
+
+<div class="container d-flex justify-content-center mt-4">
+
+
+    <h5>Esta seguro que desea eliminar {{caso.id_demanda}}?</h5>
+    <div>
+      <a href='{% url 'eliminar' caso.id %}' role='button' class='btn btn-danger'> Eliminar</a>
+  
+    </div>
+  
+  </div>
+
+{% endblock content %}
+

@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Demanda,Tipodemanda,Comuna
 
-# Register your models here.
+admin.site.register(Demanda)
+admin.site.register(Tipodemanda)
+admin.site.register(Comuna)
