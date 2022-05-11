@@ -3,6 +3,7 @@ from .forms import  DemandaForm,NewUserForm
 from .models import Demanda
 from django.contrib.auth.views import LoginView, LogoutView
 from django.db.models import Q
+from django.contrib import messages
 
 
 
@@ -18,7 +19,7 @@ def NuevaDemanda(request):
             dem=demanda.save(commit=False)
             dem.author= request.user
             dem.save()
-
+            messages.success(request, "Guardado correctamente")
             return redirect('index')
     else:
         demanda = DemandaForm()
